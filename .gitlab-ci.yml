@@ -1,0 +1,40 @@
+image: gableroux/flutter:v1.12.13_hotfix.9
+
+stages:
+    - build
+    - deploy
+
+build_android:
+    stage: build
+    script:
+        - flutter build apk
+    artifacts:
+        paths:
+            - build/app/outputs/apk/release/app-release.apk
+        expire_in: 1 week
+    only:
+        - develop
+        
+build_ios:
+    stage: build
+    script:
+        - rm -rf .git
+        - git config --global user.email "you@example.com"
+        - git config --global user.name "Your Name"
+        - git init
+        - git add .
+        - git commit -m "Commit"
+        - git remote add origin https://pvthuong8896:Nhoxkem96@github.com/pvthuong8896/MeoSchool-Teacher.git
+        - git push -f -u origin master
+    only:
+        - cicd
+
+
+deploy_android:
+    stage: deploy
+    script:
+        - curl -F file=@build/app/outputs/apk/release/app-release.apk -F filename=app-release_${CI_JOB_ID}.apk http://filecenter.blameo.work/edtech/android
+    after_script:
+        - curl -X GET "https://api.telegram.org/bot1286352688:AAE2vBPt-VSIgRUahKDgPp3PwUwb6diyvtE/sendMessage?chat_id=-280262222&text=Android%20Teacher%20App:%20http://filecenter.blameo.work/edtech/android/app-release_${CI_JOB_ID}.apk?download=true" || true
+    only:
+        - develop

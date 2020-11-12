@@ -1,0 +1,19 @@
+os: osx
+language: generic
+osx_image: xcode11.3
+      
+before_script:
+  - gem update --system
+  - gem install bundler
+  - sudo gem install fastlane -NV
+  - git clone https://github.com/flutter/flutter.git -b stable --depth 1
+  - ./flutter/bin/flutter pub get
+script:
+  - ./flutter/bin/flutter test
+#  - ./flutter/bin/flutter clean
+#  - ./flutter/bin/flutter build ios
+#  - fastlane beta
+
+cache:
+  directories:
+    - $HOME/.pub-cache

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>178971073866-o244vfkpp1ds2lc3a04og0gg6r4e740s.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.178971073866-o244vfkpp1ds2lc3a04og0gg6r4e740s</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>178971073866-5b31tl090pnsi2cu2ecsmgt31g6keihc.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCnoCAAsVBt3PJE5u1e_LqFLzpgYxUwT5I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>178971073866</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>vn.blameo.meoschool.teacher</string>
+	<key>PROJECT_ID</key>
+	<string>edtech-f9b4a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>edtech-f9b4a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:178971073866:ios:2924bc9393c3661cc8f5b3</string>
+	<key>DATABASE_URL</key>
+	<string>https://edtech-f9b4a.firebaseio.com</string>
+</dict>
+</plist>

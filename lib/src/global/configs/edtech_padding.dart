@@ -1,0 +1,1 @@
+double screenSidePadding = 16.0;

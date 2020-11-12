@@ -1,0 +1,43 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+#setup_travis
+default_platform(:ios)
+
+platform :ios do
+  
+  before_all do
+    ENV["FASTLANE_DONT_STORE_PASSWORD"] = "1"
+    ENV["FASTLANE_USER"] = "tung@blameo.com"
+    ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = "tgip-jxpz-zujn-lemw"
+  end
+
+  desc "Build beta"
+  lane :beta do
+    import_certificate(
+      certificate_path: "./provisioning/Certificates.p12",
+      certificate_password: "123456a@",
+      keychain_name: "login"
+    )
+    install_provisioning_profile(path: "./provisioning/MeoSchool_Teacher.mobileprovision")
+    build_app(scheme: "Runner",
+            workspace: "./ios/Runner.xcworkspace",
+            include_bitcode: true,
+	    output_directory: "./ipa",
+	    output_name: "Teachers.ipa",
+	     )
+    upload_to_testflight
+  end
+end

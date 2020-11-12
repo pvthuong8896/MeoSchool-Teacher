@@ -1,0 +1,10 @@
+git_url("https://pvthuong8896@gitlab.com/pvthuong8896/certificates.git")
+
+storage_mode("git")
+
+type("development") # The default type, can be: appstore, adhoc, enterprise or development
+
+app_identifier(["vn.blameo.meoschool.parent", "tools.fastlane.app2"])
+username("tung@blameo.com") # Your Apple Developer Portal username
+
+
